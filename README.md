@@ -1,5 +1,6 @@
 # portfolio-dbt-project
 
+Dataset - Brazilian E-Commerce store - https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce?select=olist_order_reviews_dataset.csv
 Dataset - Vancouver Airbnb data - http://insideairbnb.com/get-the-data
 
 Dbt-showflake tutorial: https://quickstarts.snowflake.com/guide/data_teams_with_dbt_cloud/#0
