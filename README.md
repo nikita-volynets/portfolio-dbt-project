@@ -1,5 +1,7 @@
 # portfolio-dbt-project
 
+Dataset - Vancouver Airbnb data - http://insideairbnb.com/get-the-data
+
 Dbt-showflake tutorial: https://quickstarts.snowflake.com/guide/data_teams_with_dbt_cloud/#0
 
 
