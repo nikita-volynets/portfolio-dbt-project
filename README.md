@@ -275,3 +275,25 @@ packages:
 ```
 dbt deps
 ```
+
+#### Let's create a models/staging/sources.yml file and add the following configuration:
+
+```
+version: 2
+
+sources:
+  - name: e_commerce_data
+    database: e_commerce_data
+    schema: sales
+    tables:
+      - name: customers
+      - name: geolocation
+      - name: orders
+      - name: order_items
+      - name: order_payments
+      - name: order_reviews
+      - name: products
+      - name: product_translation
+      - name: sellers
+```
+
