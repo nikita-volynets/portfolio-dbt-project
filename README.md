@@ -93,3 +93,14 @@ dbt_hol:
       schema: public
       threads: 200
 ```
+5. Validate configuration - Run the following command (in dbt_hol folder):
+
+```
+dbt debug
+```
+
+6. Finally, let's run the sample models that comes with dbt templates by default to validate everything is set up correctly. For this, please run the following command (in dbt_hol folder):
+
+```
+dbt run
+```
