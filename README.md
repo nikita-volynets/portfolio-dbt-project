@@ -214,3 +214,12 @@ FILE_FORMAT = (
     FIELD_OPTIONALLY_ENCLOSED_BY = '"' -- Add this line to handle quotes
 );
 ```
+
+### Building DBT data pipelines
+
+```
+mkdir models/staging
+mkdir models/transform
+mkdir models/mart
+mkdir models/tests
+```
