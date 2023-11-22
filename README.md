@@ -223,3 +223,55 @@ mkdir models/transform
 mkdir models/mart
 mkdir models/tests
 ```
+#### Then let's open our dbt_project.yml and modify the section below to reflect the model structure.
+
+```
+models:
+  dbt_hol:
+    staging:
+      schema: staging
+      materialized: view
+    transform:
+      schema: transform
+      materialized: view
+    mart:
+      schema: mart
+      materialized: view
+```
+
+#### Let's create a file macros\call_me_anything_you_want.sql with the following content:
+
+```
+{% macro generate_schema_name(custom_schema_name, node) -%}
+    {%- set default_schema = target.schema -%}
+    {%- if custom_schema_name is none -%}
+        {{ default_schema }}
+    {%- else -%}
+        {{ custom_schema_name | trim }}
+    {%- endif -%}
+{%- endmacro %}
+
+
+{% macro set_query_tag() -%}
+  {% set new_query_tag = model.name %} {# always use model name #}
+  {% if new_query_tag %}
+    {% set original_query_tag = get_current_query_tag() %}
+    {{ log("Setting query_tag to '" ~ new_query_tag ~ "'. Will reset to '" ~ original_query_tag ~ "' after materialization.") }}
+    {% do run_query("alter session set query_tag = '{}'".format(new_query_tag)) %}
+    {{ return(original_query_tag)}}
+  {% endif %}
+  {{ return(none)}}
+{% endmacro %}
+
+```
+#### Let's create a file called packages.yml in the root of your dbt project folder and add the following lines:
+
+```
+packages:
+  - package: dbt-labs/dbt_utils
+    version: 1.1.1
+```
+
+```
+dbt deps
+```
