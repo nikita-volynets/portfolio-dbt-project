@@ -51,3 +51,45 @@ GRANT ALL ON DATABASE dbt_hol_prod TO ROLE dbt_prod_role;
 GRANT ALL ON ALL SCHEMAS IN DATABASE dbt_hol_dev   TO ROLE dbt_dev_role;
 GRANT ALL ON ALL SCHEMAS IN DATABASE dbt_hol_prod  TO ROLE dbt_prod_role;
 ```
+
+3. Create a new dbt project in any local folder by running the following commands:
+
+```
+$ dbt init dbt_hol
+$ cd dbt_hol
+```
+
+4. Open ~/.dbt/profiles.yml in text editor and add the following section
+```
+dbt_hol:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      ######## Please replace with your Snowflake account name
+      account: <your_snowflake_trial_account>
+      
+      user: dbt_user
+      ######## Please replace with your Snowflake dbt user password
+      password: <mysecretpassword>
+      
+      role: dbt_dev_role
+      database: dbt_hol_dev
+      warehouse: dbt_dev_wh
+      schema: public
+      threads: 200
+    prod:
+      type: snowflake
+      ######## Please replace with your Snowflake account name
+      account: <your_snowflake_trial_account>
+      
+      user: dbt_user
+      ######## Please replace with your Snowflake dbt user password
+      password: <mysecretpassword>
+      
+      role: dbt_prod_role
+      database: dbt_hol_prod
+      warehouse: dbt_prod_wh
+      schema: public
+      threads: 200
+```
