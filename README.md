@@ -1,6 +1,6 @@
 # portfolio-dbt-project
 
-Dbt-showflake tutorial: https://quickstarts.snowflake.com/guide/data_teams_with_dbt_cloud/#0
+Dbt-showflake tutorial: [https://quickstarts.snowflake.com/guide/data_teams_with_dbt_cloud/#0](https://quickstarts.snowflake.com/guide/data_teams_with_dbt_core/index.html#0)
 
 
 ### Additional Materials
