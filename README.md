@@ -2,6 +2,7 @@
 
 Dbt-showflake tutorial: [https://quickstarts.snowflake.com/guide/data_teams_with_dbt_cloud/#0](https://quickstarts.snowflake.com/guide/data_teams_with_dbt_core/index.html#0)
 
+E-commerce dataset: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 
 ### Additional Materials
 
