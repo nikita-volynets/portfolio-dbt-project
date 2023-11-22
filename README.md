@@ -12,8 +12,8 @@ Maksim Kazartsev's dbt-snowflake project: https://medium.com/@kazarmax/data-mode
 
 ### Start of the project
 
-1. Set-up free Snowflake account
-2. Create a database and service accounts for dbt
+#### 1. Set-up free Snowflake account
+#### 2. Create a database and service accounts for dbt
 
 ```sql
 -------------------------------------------
@@ -52,14 +52,14 @@ GRANT ALL ON ALL SCHEMAS IN DATABASE dbt_hol_dev   TO ROLE dbt_dev_role;
 GRANT ALL ON ALL SCHEMAS IN DATABASE dbt_hol_prod  TO ROLE dbt_prod_role;
 ```
 
-3. Create a new dbt project in any local folder by running the following commands:
+#### 3. Create a new dbt project in any local folder by running the following commands:
 
 ```
 $ dbt init dbt_hol
 $ cd dbt_hol
 ```
 
-4. Open ~/.dbt/profiles.yml in text editor and add the following section
+#### 4. Open ~/.dbt/profiles.yml in text editor and add the following section
 ```
 dbt_hol:
   target: dev
@@ -93,13 +93,13 @@ dbt_hol:
       schema: public
       threads: 200
 ```
-5. Validate configuration - Run the following command (in dbt_hol folder):
+#### 5. Validate configuration - Run the following command (in dbt_hol folder):
 
 ```
 dbt debug
 ```
 
-6. Finally, let's run the sample models that comes with dbt templates by default to validate everything is set up correctly. For this, please run the following command (in dbt_hol folder):
+#### 6. Finally, let's run the sample models that comes with dbt templates by default to validate everything is set up correctly. For this, please run the following command (in dbt_hol folder):
 
 ```
 dbt run
