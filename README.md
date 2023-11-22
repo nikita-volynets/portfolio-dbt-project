@@ -105,3 +105,10 @@ dbt debug
 ```
 dbt run
 ```
+#### 7. Data Upload
+
+Let's use the following dataset: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+
+Let's create stage called 'my_stage'
+
+![image](https://github.com/nikita-volynets/portfolio-dbt-project/assets/22579201/5529297e-fc51-40d8-b332-97f43aa9feed)
